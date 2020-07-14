@@ -7,6 +7,9 @@
   @media (max-width: 680px) {
     grid-template-columns: auto auto;
   }
+  @media (max-width: 433px) {
+    grid-template-columns: auto;
+  }
   background-color: #2196f3;
   padding: 10px;
 }
