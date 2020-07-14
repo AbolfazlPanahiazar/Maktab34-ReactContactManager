@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./CotanctContainerHeder.scss";
 import SearchInput from "../SearchInput/SearchInput";
 
 class CotanctContainerHeder extends Component {
