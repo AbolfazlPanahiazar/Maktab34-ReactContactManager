@@ -1,0 +1,12 @@
+.ContactContainerBody {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  @media (max-width: 1200px) {
+    grid-template-columns: auto auto auto;
+  }
+  @media (max-width: 680px) {
+    grid-template-columns: auto auto;
+  }
+  background-color: #2196f3;
+  padding: 10px;
+}
