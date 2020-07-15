@@ -6,10 +6,9 @@ class ContactContainerBody extends Component {
   render() {
     return (
       <div className="ContactContainerBody">
-        <ContactCard />
-        <ContactCard />
-        <ContactCard />
-        <ContactCard />
+        {this.props.contacts.map((contact) => (
+          <ContactCard key={contact.id} contact={contact} />
+        ))}
       </div>
     );
   }

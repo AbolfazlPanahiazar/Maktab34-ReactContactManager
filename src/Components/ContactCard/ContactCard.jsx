@@ -5,9 +5,9 @@ class ContactCard extends Component {
   render() {
     return (
       <div className="ContactCard">
-        <img className="ContactCard__image" src={"https://api.adorable.io/avatars/150/" + Math.random()} alt="profile" />
-        <span className="ContactCard__title">Abolfazl</span>
-        <span className="ContactCard__number">09220382257</span>
+        <img className="ContactCard__image" src={`./images/person${Math.floor(Math.random() * 6) + 1}.jpg`} alt="profile" />
+        <span className="ContactCard__title">{this.props.contact.name}</span>
+        <span className="ContactCard__number">{this.props.contact.phone}</span>
       </div>
     );
   }
