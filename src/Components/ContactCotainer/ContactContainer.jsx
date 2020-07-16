@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import CotanctContainerHeder from "../CotanctContainerHeder/CotanctContainerHeder";
 import ContactContainerBody from "../ContactContainerBody/ContactContainerBody";
-import "./ContactContainer.scss";
 
 class ContactContainer extends Component {
   constructor() {
@@ -20,6 +19,7 @@ class ContactContainer extends Component {
   searchInputHandler = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+    console.log(this.state);
   };
 
   componentDidMount() {
@@ -32,15 +32,17 @@ class ContactContainer extends Component {
 
   render() {
     const contacts = this.state.contacts.filter((contact) => contact.name.toLocaleLowerCase().includes(this.state.searchInput.toLocaleLowerCase()));
+    console.log(contacts);
     return (
       <main className="ContactContainer">
-        <input
+        {/* <input
           onChange={this.searchInputHandler}
           type="text"
           name="searchInput"
           placeholder="Looking for someone..."
           value={this.state.searchInput}
-        />
+        /> */}
+        <CotanctContainerHeder searchInputHandler={this.searchInputHandler} searchInputValue={this.state.searchInput} />
         <ContactContainerBody contacts={contacts} />
       </main>
     );

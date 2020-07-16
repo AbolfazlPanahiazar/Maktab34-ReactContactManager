@@ -6,7 +6,7 @@ class CotanctContainerHeder extends Component {
   render() {
     return (
       <div className="CotanctContainerHeder">
-        <SearchInput />
+        <SearchInput searchInputHandler={this.props.searchInputHandler} searchInputValue={this.props.searchInputValue} />
       </div>
     );
   }
