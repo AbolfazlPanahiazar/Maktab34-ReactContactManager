@@ -24,4 +24,29 @@
     font-size: 1.5rem;
     color: #457b9d;
   }
+
+  &__buttons {
+    button {
+      border: none;
+      width: 4rem;
+      height: 1.5rem;
+      margin: 0.3rem;
+      border-radius: 0.2rem;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--delete {
+      background-color: #e63946;
+    }
+
+    &--edit {
+      background-color: #457b9d;
+    }
+  }
 }

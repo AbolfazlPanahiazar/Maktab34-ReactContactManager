@@ -1,52 +1,44 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import CotanctContainerHeder from "../CotanctContainerHeder/CotanctContainerHeder";
 import ContactContainerBody from "../ContactContainerBody/ContactContainerBody";
 
-class ContactContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      contacts: [
-        { id: "2d51f", name: "Sam Smith", phone: "09220382257" },
-        { id: "2d5d1", name: "Taylor Swift", phone: "0325148562" },
-        { id: "v57je", name: "Calum Scott", phone: "9512548-89" },
-        { id: "qw73c", name: "natalie Portman", phone: "036521/542" },
-      ],
-      searchInput: "",
-    };
-  }
+function ContactContainer() {
+  const [contacts, setContacs] = useState([
+    { id: "2d51f", name: "Sam Smith", phone: "09220382257" },
+    { id: "2d5d1", name: "Taylor Swift", phone: "0325148562" },
+    { id: "v57je", name: "Calum Scott", phone: "9512548-89" },
+    { id: "qw73c", name: "natalie Portman", phone: "036521/542" },
+  ]);
 
-  searchInputHandler = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-    console.log(this.state);
+  const [searchInputValue, setSearchInputValue] = useState("");
+
+  const [filteredContacs, setFilteredContacs] = useState([...contacts]);
+
+  const searchInputHandler = (event) => {
+    setSearchInputValue(event.target.value);
   };
 
-  componentDidMount() {
+  useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ contacts: [...this.state.contacts, ...response] });
+        const newContacts = [...contacts, ...response];
+        setContacs(newContacts);
+        setFilteredContacs(newContacts);
       });
-  }
+  }, []);
 
-  render() {
-    const contacts = this.state.contacts.filter((contact) => contact.name.toLocaleLowerCase().includes(this.state.searchInput.toLocaleLowerCase()));
-    console.log(contacts);
-    return (
-      <main className="ContactContainer">
-        {/* <input
-          onChange={this.searchInputHandler}
-          type="text"
-          name="searchInput"
-          placeholder="Looking for someone..."
-          value={this.state.searchInput}
-        /> */}
-        <CotanctContainerHeder searchInputHandler={this.searchInputHandler} searchInputValue={this.state.searchInput} />
-        <ContactContainerBody contacts={contacts} />
-      </main>
-    );
-  }
+  useEffect(() => {
+    const newFilteredContacts = contacts.filter((contact) => contact.name.toLocaleLowerCase().includes(searchInputValue.toLocaleLowerCase()));
+    setFilteredContacs(newFilteredContacts);
+  }, [searchInputValue]);
+
+  return (
+    <main className="ContactContainer">
+      <CotanctContainerHeder searchInputHandler={searchInputHandler} searchInputValue={searchInputValue} />
+      <ContactContainerBody contacts={filteredContacs} />
+    </main>
+  );
 }
 
 export default ContactContainer;

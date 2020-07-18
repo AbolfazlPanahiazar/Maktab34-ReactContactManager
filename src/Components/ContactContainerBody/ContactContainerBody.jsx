@@ -1,17 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import "./ContactContainerBody.scss";
 import ContactCard from "../ContactCard/ContactCard";
 
-class ContactContainerBody extends Component {
-  render() {
-    return (
-      <div className="ContactContainerBody">
-        {this.props.contacts.map((contact) => (
-          <ContactCard key={contact.id} contact={contact} />
-        ))}
-      </div>
-    );
-  }
+function ContactContainerBody(props) {
+  return (
+    <div className="ContactContainerBody">
+      {props.contacts.map((contact, index) => (
+        <ContactCard key={index} contact={contact} />
+      ))}
+    </div>
+  );
 }
 
 export default ContactContainerBody;

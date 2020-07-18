@@ -14,4 +14,7 @@
     border: 2px solid #457b9d;
     opacity: 1;
   }
+  &::placeholder {
+    opacity: 0.5;
+  }
 }

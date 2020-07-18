@@ -1,15 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Header.scss";
 
-class Header extends Component {
-  render() {
-    return (
-      <header className="Header">
-        <h1>Abolitionist ContactManager</h1>
-        <p>The best Contact Manager ever =)</p>
-      </header>
-    );
-  }
+function Header() {
+  return (
+    <header className="Header">
+      <h1>Abolitionist ContactManager</h1>
+      <p>The best Contact Manager ever =)</p>
+    </header>
+  );
 }
 
 export default Header;
