@@ -24,19 +24,24 @@ function ContactContainer() {
       .then((response) => {
         const newContacts = [...contacts, ...response];
         setContacs(newContacts);
-        setFilteredContacs(newContacts);
       });
   }, []);
 
   useEffect(() => {
     const newFilteredContacts = contacts.filter((contact) => contact.name.toLocaleLowerCase().includes(searchInputValue.toLocaleLowerCase()));
     setFilteredContacs(newFilteredContacts);
-  }, [searchInputValue]);
+  }, [searchInputValue, contacts]);
+
+  const deleteButtonHandler = (id) => {
+    let newContacts = [...contacts];
+    newContacts = newContacts.filter((contact) => contact.id !== id);
+    setContacs(newContacts);
+  };
 
   return (
     <main className="ContactContainer">
       <CotanctContainerHeder searchInputHandler={searchInputHandler} searchInputValue={searchInputValue} />
-      <ContactContainerBody contacts={filteredContacs} />
+      <ContactContainerBody contacts={filteredContacs} deleteButtonHandler={deleteButtonHandler} />
     </main>
   );
 }

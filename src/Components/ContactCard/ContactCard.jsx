@@ -8,7 +8,14 @@ function ContactCard(props) {
       <span className="ContactCard__title">{props.contact.name}</span>
       <span className="ContactCard__number">{props.contact.phone}</span>
       <div className="ContactCard__buttons">
-        <button className="ContactCard__buttons--delete">Delete</button>
+        <button
+          className="ContactCard__buttons--delete"
+          onClick={() => {
+            props.deleteButtonHandler(props.contact.id);
+          }}
+        >
+          Delete
+        </button>
         <button className="ContactCard__buttons--edit">Edit</button>
       </div>
     </div>

@@ -6,7 +6,7 @@ function ContactContainerBody(props) {
   return (
     <div className="ContactContainerBody">
       {props.contacts.map((contact, index) => (
-        <ContactCard key={index} contact={contact} />
+        <ContactCard key={index} contact={contact} deleteButtonHandler={props.deleteButtonHandler} />
       ))}
     </div>
   );
