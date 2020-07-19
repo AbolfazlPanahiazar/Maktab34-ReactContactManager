@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import CotanctContainerHeder from "../CotanctContainerHeder/CotanctContainerHeder";
 import ContactContainerBody from "../ContactContainerBody/ContactContainerBody";
+import AddContactForm from "../AddContactForm/AddContactForm";
 
 function ContactContainer() {
-  const [contacts, setContacs] = useState([
-    { id: "2d51f", name: "Sam Smith", phone: "09220382257" },
-    { id: "2d5d1", name: "Taylor Swift", phone: "0325148562" },
-    { id: "v57je", name: "Calum Scott", phone: "9512548-89" },
-    { id: "qw73c", name: "natalie Portman", phone: "036521/542" },
-  ]);
+  const localContacts = JSON.parse(localStorage.getItem("qarxfdvgbfhu7yfjmvi"));
+  if (!localContacts) localStorage.setItem("qarxfdvgbfhu7yfjmvi", JSON.stringify([]));
+
+  const [contacts, setContacs] = useState(localContacts);
 
   const [searchInputValue, setSearchInputValue] = useState("");
 
@@ -18,14 +17,18 @@ function ContactContainer() {
     setSearchInputValue(event.target.value);
   };
 
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/users")
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       const newContacts = [...contacts, ...response];
+  //       setContacs(newContacts);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((response) => {
-        const newContacts = [...contacts, ...response];
-        setContacs(newContacts);
-      });
-  }, []);
+    localStorage.setItem("qarxfdvgbfhu7yfjmvi", JSON.stringify(contacts));
+  }, contacts);
 
   useEffect(() => {
     const newFilteredContacts = contacts.filter((contact) => contact.name.toLocaleLowerCase().includes(searchInputValue.toLocaleLowerCase()));
@@ -50,6 +53,7 @@ function ContactContainer() {
     <main className="ContactContainer">
       <CotanctContainerHeder searchInputHandler={searchInputHandler} searchInputValue={searchInputValue} />
       <ContactContainerBody contacts={filteredContacs} deleteButtonHandler={deleteButtonHandler} saveEditButtonHandler={saveEditButtonHandler} />
+      <AddContactForm />
     </main>
   );
 }
