@@ -1,8 +1,16 @@
 .AddContactForm {
   position: fixed;
   display: flex;
+  background-color: #a8dadc;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  border: 2px solid #457b9d;
+  animation: addContactFormAnimation 1s ease-out;
 
   label {
     margin: 0.5rem;
@@ -54,5 +62,17 @@
     &--add {
       background-color: #457b9d;
     }
+  }
+}
+
+@keyframes addContactFormAnimation {
+  0% {
+    top: -100%;
+  }
+  80% {
+    top: 55%;
+  }
+  100% {
+    top: 50%;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CotanctContainerHeder from "../CotanctContainerHeder/CotanctContainerHeder";
 import ContactContainerBody from "../ContactContainerBody/ContactContainerBody";
 import AddContactForm from "../AddContactForm/AddContactForm";
+import "./ContactContainer.scss";
 
 function ContactContainer() {
   const localContacts = JSON.parse(localStorage.getItem("qarxfdvgbfhu7yfjmvi"));
@@ -12,6 +13,8 @@ function ContactContainer() {
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const [filteredContacs, setFilteredContacs] = useState([...contacts]);
+
+  const [addNewMode, setAddNewMode] = useState(false);
 
   const searchInputHandler = (event) => {
     setSearchInputValue(event.target.value);
@@ -28,7 +31,7 @@ function ContactContainer() {
 
   useEffect(() => {
     localStorage.setItem("qarxfdvgbfhu7yfjmvi", JSON.stringify(contacts));
-  }, contacts);
+  }, [contacts]);
 
   useEffect(() => {
     const newFilteredContacts = contacts.filter((contact) => contact.name.toLocaleLowerCase().includes(searchInputValue.toLocaleLowerCase()));
@@ -49,11 +52,21 @@ function ContactContainer() {
     setContacs(newContacts);
   };
 
+  const createNewContactHandler = (newName, newPhone) => {
+    const newContacts = JSON.parse(JSON.stringify(contacts));
+    const newContact = { id: Date.now(), name: newName, phone: newPhone };
+    newContacts.push(newContact);
+    setContacs(newContacts);
+  };
+
   return (
     <main className="ContactContainer">
+      <button className="ContactContainer__addButton" onClick={() => setAddNewMode(true)}>
+        Add New Contact
+      </button>
       <CotanctContainerHeder searchInputHandler={searchInputHandler} searchInputValue={searchInputValue} />
       <ContactContainerBody contacts={filteredContacs} deleteButtonHandler={deleteButtonHandler} saveEditButtonHandler={saveEditButtonHandler} />
-      <AddContactForm />
+      {addNewMode && <AddContactForm setAddNewMode={setAddNewMode} createNewContactHandler={createNewContactHandler} />}
     </main>
   );
 }
