@@ -38,10 +38,18 @@ function ContactContainer() {
     setContacs(newContacts);
   };
 
+  const saveEditButtonHandler = (id, newName, newPhone) => {
+    const newContacts = JSON.parse(JSON.stringify(contacts));
+    const newContact = { id: id, name: newName, phone: newPhone };
+    const theIndex = newContacts.findIndex((contact) => contact.id === id);
+    newContacts[theIndex] = newContact;
+    setContacs(newContacts);
+  };
+
   return (
     <main className="ContactContainer">
       <CotanctContainerHeder searchInputHandler={searchInputHandler} searchInputValue={searchInputValue} />
-      <ContactContainerBody contacts={filteredContacs} deleteButtonHandler={deleteButtonHandler} />
+      <ContactContainerBody contacts={filteredContacs} deleteButtonHandler={deleteButtonHandler} saveEditButtonHandler={saveEditButtonHandler} />
     </main>
   );
 }

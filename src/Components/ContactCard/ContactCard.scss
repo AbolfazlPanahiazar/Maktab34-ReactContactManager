@@ -41,12 +41,21 @@
       }
     }
 
-    &--delete {
+    &--delete,
+    &--cancell {
       background-color: #e63946;
     }
 
-    &--edit {
+    &--edit,
+    &--save {
       background-color: #457b9d;
     }
+  }
+
+  input {
+    border: none;
+    border-radius: 0.2rem;
+    margin: 0.2rem;
+    padding: 0.2rem;
   }
 }
