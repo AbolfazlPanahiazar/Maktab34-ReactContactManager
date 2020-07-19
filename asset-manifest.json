@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Maktab34-ReactContactManager/static/css/main.f14e7201.chunk.css",
-    "main.js": "/Maktab34-ReactContactManager/static/js/main.b4aeb3a5.chunk.js",
-    "main.js.map": "/Maktab34-ReactContactManager/static/js/main.b4aeb3a5.chunk.js.map",
-    "runtime-main.js": "/Maktab34-ReactContactManager/static/js/runtime-main.5d9b620f.js",
-    "runtime-main.js.map": "/Maktab34-ReactContactManager/static/js/runtime-main.5d9b620f.js.map",
-    "static/js/2.7134fd2f.chunk.js": "/Maktab34-ReactContactManager/static/js/2.7134fd2f.chunk.js",
-    "static/js/2.7134fd2f.chunk.js.map": "/Maktab34-ReactContactManager/static/js/2.7134fd2f.chunk.js.map",
-    "index.html": "/Maktab34-ReactContactManager/index.html",
-    "precache-manifest.9a9664ac022a2b471e736e51bf04af67.js": "/Maktab34-ReactContactManager/precache-manifest.9a9664ac022a2b471e736e51bf04af67.js",
-    "service-worker.js": "/Maktab34-ReactContactManager/service-worker.js",
-    "static/css/main.f14e7201.chunk.css.map": "/Maktab34-ReactContactManager/static/css/main.f14e7201.chunk.css.map",
-    "static/js/2.7134fd2f.chunk.js.LICENSE.txt": "/Maktab34-ReactContactManager/static/js/2.7134fd2f.chunk.js.LICENSE.txt"
+    "main.css": "/aktab34-ReactContactManager/static/css/main.f14e7201.chunk.css",
+    "main.js": "/aktab34-ReactContactManager/static/js/main.36a72f1a.chunk.js",
+    "main.js.map": "/aktab34-ReactContactManager/static/js/main.36a72f1a.chunk.js.map",
+    "runtime-main.js": "/aktab34-ReactContactManager/static/js/runtime-main.60531e9e.js",
+    "runtime-main.js.map": "/aktab34-ReactContactManager/static/js/runtime-main.60531e9e.js.map",
+    "static/js/2.7134fd2f.chunk.js": "/aktab34-ReactContactManager/static/js/2.7134fd2f.chunk.js",
+    "static/js/2.7134fd2f.chunk.js.map": "/aktab34-ReactContactManager/static/js/2.7134fd2f.chunk.js.map",
+    "index.html": "/aktab34-ReactContactManager/index.html",
+    "precache-manifest.70d1bd4b7726c5276f581f82e964175c.js": "/aktab34-ReactContactManager/precache-manifest.70d1bd4b7726c5276f581f82e964175c.js",
+    "service-worker.js": "/aktab34-ReactContactManager/service-worker.js",
+    "static/css/main.f14e7201.chunk.css.map": "/aktab34-ReactContactManager/static/css/main.f14e7201.chunk.css.map",
+    "static/js/2.7134fd2f.chunk.js.LICENSE.txt": "/aktab34-ReactContactManager/static/js/2.7134fd2f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5d9b620f.js",
+    "static/js/runtime-main.60531e9e.js",
     "static/js/2.7134fd2f.chunk.js",
     "static/css/main.f14e7201.chunk.css",
-    "static/js/main.b4aeb3a5.chunk.js"
+    "static/js/main.36a72f1a.chunk.js"
   ]
 }
