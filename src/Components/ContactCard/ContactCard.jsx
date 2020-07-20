@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Avatar from "./person5.jpg";
 import "./ContactCard.scss";
 
 function ContactCard(props) {
@@ -17,7 +18,7 @@ function ContactCard(props) {
 
   return (
     <div className="ContactCard">
-      <img className="ContactCard__image" src={`./images/person5.jpg`} alt="profile" />
+      <img className="ContactCard__image" src={Avatar} alt="profile" />
 
       {editId === props.contact.id ? (
         <>
