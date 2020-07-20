@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Maktab34-ReactContactManager/precache-manifest.9a9664ac022a2b471e736e51bf04af67.js"
+  "/Maktab34-ReactContactManager/precache-manifest.9f69282fa3259f8e19b614076c694733.js"
 );
 
 self.addEventListener('message', (event) => {
