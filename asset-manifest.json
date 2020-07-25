@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Maktab34-ReactContactManager/static/css/main.f14e7201.chunk.css",
-    "main.js": "/Maktab34-ReactContactManager/static/js/main.adde1378.chunk.js",
-    "main.js.map": "/Maktab34-ReactContactManager/static/js/main.adde1378.chunk.js.map",
+    "main.js": "/Maktab34-ReactContactManager/static/js/main.8c7a734d.chunk.js",
+    "main.js.map": "/Maktab34-ReactContactManager/static/js/main.8c7a734d.chunk.js.map",
     "runtime-main.js": "/Maktab34-ReactContactManager/static/js/runtime-main.5d9b620f.js",
     "runtime-main.js.map": "/Maktab34-ReactContactManager/static/js/runtime-main.5d9b620f.js.map",
-    "static/js/2.8eaaae51.chunk.js": "/Maktab34-ReactContactManager/static/js/2.8eaaae51.chunk.js",
-    "static/js/2.8eaaae51.chunk.js.map": "/Maktab34-ReactContactManager/static/js/2.8eaaae51.chunk.js.map",
+    "static/js/2.35d60deb.chunk.js": "/Maktab34-ReactContactManager/static/js/2.35d60deb.chunk.js",
+    "static/js/2.35d60deb.chunk.js.map": "/Maktab34-ReactContactManager/static/js/2.35d60deb.chunk.js.map",
     "index.html": "/Maktab34-ReactContactManager/index.html",
-    "precache-manifest.9f69282fa3259f8e19b614076c694733.js": "/Maktab34-ReactContactManager/precache-manifest.9f69282fa3259f8e19b614076c694733.js",
+    "precache-manifest.6e7bcdb4a4ed25c4e90ade29ac2af541.js": "/Maktab34-ReactContactManager/precache-manifest.6e7bcdb4a4ed25c4e90ade29ac2af541.js",
     "service-worker.js": "/Maktab34-ReactContactManager/service-worker.js",
     "static/css/main.f14e7201.chunk.css.map": "/Maktab34-ReactContactManager/static/css/main.f14e7201.chunk.css.map",
-    "static/js/2.8eaaae51.chunk.js.LICENSE.txt": "/Maktab34-ReactContactManager/static/js/2.8eaaae51.chunk.js.LICENSE.txt"
+    "static/js/2.35d60deb.chunk.js.LICENSE.txt": "/Maktab34-ReactContactManager/static/js/2.35d60deb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5d9b620f.js",
-    "static/js/2.8eaaae51.chunk.js",
+    "static/js/2.35d60deb.chunk.js",
     "static/css/main.f14e7201.chunk.css",
-    "static/js/main.adde1378.chunk.js"
+    "static/js/main.8c7a734d.chunk.js"
   ]
 }
