@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./AddContactForm.scss";
 
 function AddContactForm(props) {
@@ -25,12 +26,16 @@ function AddContactForm(props) {
         <input id="phoneInput" type="text" placeholder="Enter the phone number" onChange={phoneInputChangeHandler} value={phoneInputValue} required />
       </label>
       <div className="AddContactForm__buttons">
-        <button className="AddContactForm__buttons--cancell" onClick={() => props.setAddNewMode(false)}>
-          Cancell
-        </button>
-        <button className="AddContactForm__buttons--add" onClick={() => props.createNewContactHandler(nameInputValue, phoneInputValue)}>
-          Add
-        </button>
+        <Link to="/">
+          <button className="AddContactForm__buttons--cancell" onClick={() => props.setAddNewMode(false)}>
+            Cancell
+          </button>
+        </Link>
+        <Link to="/">
+          <button className="AddContactForm__buttons--add" onClick={() => props.createNewContactHandler(nameInputValue, phoneInputValue)}>
+            Add
+          </button>
+        </Link>
       </div>
     </form>
   );

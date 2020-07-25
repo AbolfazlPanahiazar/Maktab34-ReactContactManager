@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Header from "../Header/Header";
 import CotanctContainerHeder from "../CotanctContainerHeder/CotanctContainerHeder";
 import ContactContainerBody from "../ContactContainerBody/ContactContainerBody";
 import AddContactForm from "../AddContactForm/AddContactForm";
@@ -19,15 +21,6 @@ function ContactContainer() {
   const searchInputHandler = (event) => {
     setSearchInputValue(event.target.value);
   };
-
-  // useEffect(() => {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       const newContacts = [...contacts, ...response];
-  //       setContacs(newContacts);
-  //     });
-  // }, []);
 
   useEffect(() => {
     localStorage.setItem("qarxfdvgbfhu7yfjmvi", JSON.stringify(contacts));
@@ -60,14 +53,29 @@ function ContactContainer() {
   };
 
   return (
-    <main className="ContactContainer">
-      <button className="ContactContainer__addButton" onClick={() => setAddNewMode(true)}>
-        Add New Contact
-      </button>
-      <CotanctContainerHeder searchInputHandler={searchInputHandler} searchInputValue={searchInputValue} />
-      <ContactContainerBody contacts={filteredContacs} deleteButtonHandler={deleteButtonHandler} saveEditButtonHandler={saveEditButtonHandler} />
-      {addNewMode && <AddContactForm setAddNewMode={setAddNewMode} createNewContactHandler={createNewContactHandler} />}
-    </main>
+    <>
+      <Header />
+      <Router>
+        <Route exaxt path="/add-new">
+          <AddContactForm setAddNewMode={setAddNewMode} createNewContactHandler={createNewContactHandler} />
+        </Route>
+        <Route exact path="/">
+          <main className="ContactContainer">
+            <Link to="/add-new">
+              <button className="ContactContainer__addButton" onClick={() => setAddNewMode(true)}>
+                Add New Contact
+              </button>
+            </Link>
+            <CotanctContainerHeder searchInputHandler={searchInputHandler} searchInputValue={searchInputValue} />
+            <ContactContainerBody
+              contacts={filteredContacs}
+              deleteButtonHandler={deleteButtonHandler}
+              saveEditButtonHandler={saveEditButtonHandler}
+            />
+          </main>
+        </Route>
+      </Router>
+    </>
   );
 }
 
