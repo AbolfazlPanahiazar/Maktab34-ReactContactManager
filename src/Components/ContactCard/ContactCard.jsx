@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Card, CardImg, Button, CardTitle, CardSubtitile, Input, CardBody, Col } from "reactstrap";
 import Avatar from "./person5.jpg";
 import "./ContactCard.scss";
 
@@ -17,43 +18,46 @@ function ContactCard(props) {
   };
 
   return (
-    <div className="ContactCard">
-      <img className="ContactCard__image" src={Avatar} alt="profile" />
-
-      {editId === props.contact.id ? (
-        <>
-          <input value={inputNameValue} onChange={nameInputChangeHandler} />
-          <input value={inputPhoneValue} onChange={phoneInputChangeHandler} />
-          <div className="ContactCard__buttons">
-            <button className="ContactCard__buttons--cancell" onClick={() => setEditId(0)}>
-              Cancell
-            </button>
-            <button
-              className="ContactCard__buttons--save"
-              onClick={() => {
-                props.saveEditButtonHandler(props.contact.id, inputNameValue, inputPhoneValue);
-                setEditId(0);
-              }}
-            >
-              Save
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <span className="ContactCard__title">{props.contact.name}</span>
-          <span className="ContactCard__number">{props.contact.phone}</span>
-          <div className="ContactCard__buttons">
-            <button className="ContactCard__buttons--delete" onClick={() => props.deleteButtonHandler(props.contact.id)}>
-              Delete
-            </button>
-            <button className="ContactCard__buttons--edit" onClick={() => setEditId(props.contact.id)}>
-              Edit
-            </button>
-          </div>
-        </>
-      )}
-    </div>
+    <Col xs="12" sm="12" md="6" lg="4" xl="3">
+      <Card className="ContactCard">
+        <CardImg className="ContactCard__image" src={Avatar} alt="profile" />
+        <CardBody>
+          {editId === props.contact.id ? (
+            <>
+              <Input value={inputNameValue} onChange={nameInputChangeHandler} />
+              <Input value={inputPhoneValue} onChange={phoneInputChangeHandler} />
+              <div className="ContactCard__buttons">
+                <Button className="ContactCard__buttons--cancell" onClick={() => setEditId(0)}>
+                  Cancell
+                </Button>
+                <Button
+                  className="ContactCard__buttons--save"
+                  onClick={() => {
+                    props.saveEditButtonHandler(props.contact.id, inputNameValue, inputPhoneValue);
+                    setEditId(0);
+                  }}
+                >
+                  Save
+                </Button>
+              </div>
+            </>
+          ) : (
+            <>
+              <CardTitle className="ContactCard__title">{props.contact.name}</CardTitle>
+              <CardTitle className="ContactCard__number">{props.contact.phone}</CardTitle>
+              <div className="ContactCard__buttons">
+                <Button className="ContactCard__buttons--delete" onClick={() => props.deleteButtonHandler(props.contact.id)}>
+                  Delete
+                </Button>
+                <Button className="ContactCard__buttons--edit" onClick={() => setEditId(props.contact.id)}>
+                  Edit
+                </Button>
+              </div>
+            </>
+          )}
+        </CardBody>
+      </Card>
+    </Col>
   );
 }
 

@@ -1,36 +1,11 @@
 .ContactCard {
-  padding: 0.5rem;
-  display: flex;
-  margin: 1rem;
   border: 2px solid #e63946;
-  border-radius: 0.5rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border-radius: 0.3rem;
   font-weight: 800;
-
-  &__image {
-    max-width: 150px;
-    border-radius: 14%;
-    margin-bottom: 1rem;
-  }
-
-  &__title {
-    font-size: 1.5rem;
-    color: #e63946;
-  }
-
-  &__number {
-    font-size: 1.5rem;
-    color: #457b9d;
-  }
 
   &__buttons {
     button {
       border: none;
-      width: 4rem;
-      height: 1.5rem;
-      margin: 0.3rem;
       border-radius: 0.2rem;
       color: #ffffff;
       font-weight: 600;
@@ -50,12 +25,5 @@
     &--save {
       background-color: #457b9d;
     }
-  }
-
-  input {
-    border: none;
-    border-radius: 0.2rem;
-    margin: 0.2rem;
-    padding: 0.2rem;
   }
 }

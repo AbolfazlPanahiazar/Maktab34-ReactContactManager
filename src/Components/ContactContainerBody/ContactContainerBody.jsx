@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Row } from "reactstrap";
 import "./ContactContainerBody.scss";
 import ContactCard from "../ContactCard/ContactCard";
 
@@ -6,7 +7,7 @@ function ContactContainerBody(props) {
   const [editId, setEditId] = useState(0);
 
   return (
-    <div className="ContactContainerBody">
+    <Row className="ContactContainerBody">
       {props.contacts.map((contact, index) => (
         <ContactCard
           key={index}
@@ -17,7 +18,7 @@ function ContactContainerBody(props) {
           saveEditButtonHandler={props.saveEditButtonHandler}
         />
       ))}
-    </div>
+    </Row>
   );
 }
 
